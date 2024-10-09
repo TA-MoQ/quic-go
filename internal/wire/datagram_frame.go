@@ -18,6 +18,7 @@ var MaxDatagramSize protocol.ByteCount = 16383
 type DatagramFrame struct {
 	DataLenPresent bool
 	Data           []byte
+	priority       uint8
 }
 
 func parseDatagramFrame(r *bytes.Reader, typ uint64, _ protocol.Version) (*DatagramFrame, error) {
@@ -83,4 +84,12 @@ func (f *DatagramFrame) Length(_ protocol.Version) protocol.ByteCount {
 		length += quicvarint.Len(uint64(len(f.Data)))
 	}
 	return length
+}
+
+func (f *DatagramFrame) GetPriority() uint8 {
+	return f.priority
+}
+
+func (f *DatagramFrame) SetPriority(value uint8) {
+	f.priority = value
 }

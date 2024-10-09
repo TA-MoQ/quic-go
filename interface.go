@@ -201,6 +201,8 @@ type Connection interface {
 	// In addition, a datagram may be dropped before being sent out if the available packet size suddenly decreases.
 	// If the payload is too large to be sent at the current time, a DatagramTooLargeError is returned.
 	SendDatagram(payload []byte) error
+	// SendDatagram but with priority
+	SendDatagramWithPriority(payload []byte, priority uint8) error
 	// ReceiveDatagram gets a message received in a datagram, as specified in RFC 9221.
 	ReceiveDatagram(context.Context) ([]byte, error)
 	// Returns the estimated max send bandwidth in bits/second as reported by the congestion controller.

@@ -5,8 +5,8 @@ import (
 	"sync"
 
 	"github.com/TA-MoQ/quic-go/internal/utils"
-	"github.com/TA-MoQ/quic-go/internal/utils/ringbuffer"
 	"github.com/TA-MoQ/quic-go/internal/wire"
+	"github.com/oleiade/lane/v2"
 )
 
 const (
@@ -16,7 +16,7 @@ const (
 
 type datagramQueue struct {
 	sendMx    sync.Mutex
-	sendQueue ringbuffer.RingBuffer[*wire.DatagramFrame]
+	sendQueue *lane.PriorityQueue[*wire.DatagramFrame, uint8]
 	sent      chan struct{} // used to notify Add that a datagram was dequeued
 
 	rcvMx    sync.Mutex
@@ -33,11 +33,12 @@ type datagramQueue struct {
 
 func newDatagramQueue(hasData func(), logger utils.Logger) *datagramQueue {
 	return &datagramQueue{
-		hasData: hasData,
-		rcvd:    make(chan struct{}, 1),
-		sent:    make(chan struct{}, 1),
-		closed:  make(chan struct{}),
-		logger:  logger,
+		sendQueue: lane.NewMaxPriorityQueue[*wire.DatagramFrame, uint8](),
+		hasData:   hasData,
+		rcvd:      make(chan struct{}, 1),
+		sent:      make(chan struct{}, 1),
+		closed:    make(chan struct{}),
+		logger:    logger,
 	}
 }
 
@@ -48,8 +49,8 @@ func (h *datagramQueue) Add(f *wire.DatagramFrame) error {
 	h.sendMx.Lock()
 
 	for {
-		if h.sendQueue.Len() < maxDatagramSendQueueLen {
-			h.sendQueue.PushBack(f)
+		if h.sendQueue.Size() < maxDatagramSendQueueLen {
+			h.sendQueue.Push(f, f.GetPriority())
 			h.sendMx.Unlock()
 			h.hasData()
 			return nil
@@ -76,13 +77,14 @@ func (h *datagramQueue) Peek() *wire.DatagramFrame {
 	if h.sendQueue.Empty() {
 		return nil
 	}
-	return h.sendQueue.PeekFront()
+	head, _, _ := h.sendQueue.Head()
+	return head
 }
 
 func (h *datagramQueue) Pop() {
 	h.sendMx.Lock()
 	defer h.sendMx.Unlock()
-	_ = h.sendQueue.PopFront()
+	_, _, _ = h.sendQueue.Pop()
 	select {
 	case h.sent <- struct{}{}:
 	default:
