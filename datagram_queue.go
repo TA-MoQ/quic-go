@@ -16,7 +16,7 @@ const (
 
 type datagramQueue struct {
 	sendMx    sync.Mutex
-	sendQueue *lane.PriorityQueue[*wire.DatagramFrame, uint8]
+	sendQueue *lane.PriorityQueue[*wire.DatagramFrame, int]
 	sent      chan struct{} // used to notify Add that a datagram was dequeued
 
 	rcvMx    sync.Mutex
@@ -33,7 +33,7 @@ type datagramQueue struct {
 
 func newDatagramQueue(hasData func(), logger utils.Logger) *datagramQueue {
 	return &datagramQueue{
-		sendQueue: lane.NewMaxPriorityQueue[*wire.DatagramFrame, uint8](),
+		sendQueue: lane.NewMaxPriorityQueue[*wire.DatagramFrame, int](),
 		hasData:   hasData,
 		rcvd:      make(chan struct{}, 1),
 		sent:      make(chan struct{}, 1),

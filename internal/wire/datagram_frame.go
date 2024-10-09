@@ -86,7 +86,7 @@ func (f *DatagramFrame) Length(_ protocol.Version) protocol.ByteCount {
 	return length
 }
 
-func (f *DatagramFrame) GetPriority() uint8 {
+func (f *DatagramFrame) GetPriority() int {
 	return f.priority
 }
 
