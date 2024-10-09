@@ -2350,7 +2350,7 @@ func (s *connection) onStreamCompleted(id protocol.StreamID) {
 	}
 }
 
-func (s *connection) SendDatagramWithPriority(p []byte, priority uint8) error {
+func (s *connection) SendDatagramWithPriority(p []byte, priority int) error {
 	if !s.supportsDatagrams() {
 		return errors.New("datagram support disabled")
 	}
