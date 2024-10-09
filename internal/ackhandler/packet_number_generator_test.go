@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

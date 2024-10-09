@@ -1,5 +1,5 @@
-github.com/TugasAkhir-QUIC/quic-go v0.0.1 h1:oOjknfSzEnxDbdbZwkKMrYjoSoO9W6tarCIkR6BYjg8=
-github.com/TugasAkhir-QUIC/quic-go v0.0.1/go.mod h1:tJbxeyxkrBNDKfK5VKPb+l0tZxpMVEK6GmpJc6lMpB0=
+github.com/TA-MoQ/quic-go v0.0.1 h1:oOjknfSzEnxDbdbZwkKMrYjoSoO9W6tarCIkR6BYjg8=
+github.com/TA-MoQ/quic-go v0.0.1/go.mod h1:tJbxeyxkrBNDKfK5VKPb+l0tZxpMVEK6GmpJc6lMpB0=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-logr/logr v1.2.4 h1:g01GSCwiDw2xSZfjJ2/T9M+S6pFdcNtFYsp+Y43HYDQ=

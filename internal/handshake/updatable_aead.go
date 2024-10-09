@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/qerr"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/utils"
-	"github.com/TugasAkhir-QUIC/quic-go/logging"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/qerr"
+	"github.com/TA-MoQ/quic-go/internal/utils"
+	"github.com/TA-MoQ/quic-go/logging"
 )
 
 // KeyUpdateInterval is the maximum number of packets we send or receive before initiating a key update.

@@ -4,7 +4,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
 )
 
 // This cubic implementation is based on the one found in Chromiums's QUIC

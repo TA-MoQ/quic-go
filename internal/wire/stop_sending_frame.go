@@ -3,9 +3,9 @@ package wire
 import (
 	"bytes"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/qerr"
-	"github.com/TugasAkhir-QUIC/quic-go/quicvarint"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/qerr"
+	"github.com/TA-MoQ/quic-go/quicvarint"
 )
 
 // A StopSendingFrame is a STOP_SENDING frame

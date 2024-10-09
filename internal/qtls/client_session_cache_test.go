@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/testdata"
+	"github.com/TA-MoQ/quic-go/internal/testdata"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

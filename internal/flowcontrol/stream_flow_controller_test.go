@@ -3,9 +3,9 @@ package flowcontrol
 import (
 	"time"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/qerr"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/utils"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/qerr"
+	"github.com/TA-MoQ/quic-go/internal/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

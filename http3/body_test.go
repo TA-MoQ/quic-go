@@ -3,8 +3,8 @@ package http3
 import (
 	"errors"
 
-	"github.com/TugasAkhir-QUIC/quic-go"
-	mockquic "github.com/TugasAkhir-QUIC/quic-go/internal/mocks/quic"
+	"github.com/TA-MoQ/quic-go"
+	mockquic "github.com/TA-MoQ/quic-go/internal/mocks/quic"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

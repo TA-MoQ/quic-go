@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/TugasAkhir-QUIC/quic-go/fuzzing/internal/helper"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/wire"
+	"github.com/TA-MoQ/quic-go/fuzzing/internal/helper"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/wire"
 )
 
 // PrefixLen is the number of bytes used for configuration

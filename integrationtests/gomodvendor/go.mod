@@ -3,7 +3,7 @@ module test
 go 1.21
 
 // The version doesn't matter here, as we're replacing it with the currently checked out code anyway.
-require github.com/TugasAkhir-QUIC/quic-go v0.0.1
+require github.com/TA-MoQ/quic-go v0.0.1
 
 require (
 	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect

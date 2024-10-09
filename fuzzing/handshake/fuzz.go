@@ -14,12 +14,12 @@ import (
 	"net"
 	"time"
 
-	"github.com/TugasAkhir-QUIC/quic-go/fuzzing/internal/helper"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/handshake"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/qtls"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/utils"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/wire"
+	"github.com/TA-MoQ/quic-go/fuzzing/internal/helper"
+	"github.com/TA-MoQ/quic-go/internal/handshake"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/qtls"
+	"github.com/TA-MoQ/quic-go/internal/utils"
+	"github.com/TA-MoQ/quic-go/internal/wire"
 )
 
 var (

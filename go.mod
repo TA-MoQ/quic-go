@@ -1,4 +1,4 @@
-module github.com/TugasAkhir-QUIC/quic-go
+module github.com/TA-MoQ/quic-go
 
 go 1.21
 

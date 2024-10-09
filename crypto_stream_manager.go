@@ -3,9 +3,9 @@ package quic
 import (
 	"fmt"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/handshake"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/wire"
+	"github.com/TA-MoQ/quic-go/internal/handshake"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/wire"
 )
 
 type cryptoDataHandler interface {

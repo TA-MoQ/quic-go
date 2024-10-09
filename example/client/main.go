@@ -11,10 +11,10 @@ import (
 	"os"
 	"sync"
 
-	"github.com/TugasAkhir-QUIC/quic-go"
-	"github.com/TugasAkhir-QUIC/quic-go/http3"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/testdata"
-	"github.com/TugasAkhir-QUIC/quic-go/qlog"
+	"github.com/TA-MoQ/quic-go"
+	"github.com/TA-MoQ/quic-go/http3"
+	"github.com/TA-MoQ/quic-go/internal/testdata"
+	"github.com/TA-MoQ/quic-go/qlog"
 )
 
 func main() {

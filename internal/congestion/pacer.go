@@ -3,7 +3,7 @@ package congestion
 import (
 	"time"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
 )
 
 const maxBurstSizePackets = 10

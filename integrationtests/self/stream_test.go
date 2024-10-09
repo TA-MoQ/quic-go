@@ -7,9 +7,9 @@ import (
 	"net"
 	"sync"
 
+	"github.com/TA-MoQ/quic-go"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	"github.com/TugasAkhir-QUIC/quic-go"
 )
 
 var _ = Describe("Bidirectional streams", func() {

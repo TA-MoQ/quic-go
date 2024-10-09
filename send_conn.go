@@ -3,8 +3,8 @@ package quic
 import (
 	"net"
 
-	"github.com/TugasAkhir-QUIC/quic-go/internal/protocol"
-	"github.com/TugasAkhir-QUIC/quic-go/internal/utils"
+	"github.com/TA-MoQ/quic-go/internal/protocol"
+	"github.com/TA-MoQ/quic-go/internal/utils"
 )
 
 // A sendConn allows sending using a simple Write() on a non-connected packet conn.

@@ -6,10 +6,10 @@ import (
 	"path"
 	"regexp"
 
+	"github.com/TA-MoQ/quic-go"
+	"github.com/TA-MoQ/quic-go/qlog"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	"github.com/TugasAkhir-QUIC/quic-go"
-	"github.com/TugasAkhir-QUIC/quic-go/qlog"
 )
 
 var _ = Describe("qlog dir tests", Serial, func() {
