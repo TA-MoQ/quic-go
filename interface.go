@@ -202,7 +202,7 @@ type Connection interface {
 	// If the payload is too large to be sent at the current time, a DatagramTooLargeError is returned.
 	SendDatagram(payload []byte) error
 	// SendDatagram but with priority
-	SendDatagramWithPriority(payload []byte, priority uint8) error
+	SendDatagramWithPriority(payload []byte, priority int) error
 	// ReceiveDatagram gets a message received in a datagram, as specified in RFC 9221.
 	ReceiveDatagram(context.Context) ([]byte, error)
 	// Returns the estimated max send bandwidth in bits/second as reported by the congestion controller.
