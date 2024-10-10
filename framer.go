@@ -139,7 +139,8 @@ func (f *framerI) AppendStreamFrames(frames []ackhandler.StreamFrame, maxLen pro
 	f.mutex.Lock()
 
 	// TODO perform this sort when SetPriority() is called
-	f.sortQueue()
+	// NOTE: Disabled because we only do it once in server anyway
+	// f.sortQueue()
 
 	// Record information about streams with the same priority
 	priorityCurrent := 0 // The current priority value
