@@ -2350,23 +2350,6 @@ func (s *connection) onStreamCompleted(id protocol.StreamID) {
 	}
 }
 
-func (s *connection) SendDatagramWithPriority(p []byte, priority int) error {
-	if !s.supportsDatagrams() {
-		return errors.New("datagram support disabled")
-	}
-
-	f := &wire.DatagramFrame{DataLenPresent: true}
-	if protocol.ByteCount(len(p)) > f.MaxDataLen(s.peerParams.MaxDatagramFrameSize, s.version) {
-		return &DatagramTooLargeError{
-			PeerMaxDatagramFrameSize: int64(s.peerParams.MaxDatagramFrameSize),
-		}
-	}
-	f.Data = make([]byte, len(p))
-	copy(f.Data, p)
-	f.SetPriority(priority)
-	return s.datagramQueue.Add(f)
-}
-
 func (s *connection) SendDatagram(p []byte) error {
 	if !s.supportsDatagrams() {
 		return errors.New("datagram support disabled")
